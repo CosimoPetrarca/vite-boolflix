@@ -25,6 +25,14 @@ export default {
         },
         getVote(serie) {
             return serie.vote_average / 2;
+        },
+
+        getPoster(serie) {
+            if (serie.poster_path) {
+                return `${store.parameters.url_img}${serie.poster_path}`;
+            } else {
+                return '';
+            }
         }
     }
 }
@@ -37,6 +45,7 @@ export default {
 
     <ul v-for="serie in store.series">
         <li>Titolo: <strong>{{ serie.name }}</strong></li>
+        <li><img :src="getPoster(serie)" alt="Poster" /></li>
         <li>Titolo originale: {{ serie.original_name }}</li>
         <li>Lingua: <country-flag :country='getLanguage(serie)' size='small' /></li>
         <li>Voto: {{ getVote(serie) }}</li>

@@ -25,6 +25,14 @@ export default {
         },
         getVote(movie) {
             return movie.vote_average / 2;
+        },
+
+        getPoster(movie) {
+            if (movie.poster_path) {
+                return `${store.parameters.url_img}${movie.poster_path}`;
+            } else {
+                return '';
+            }
         }
     }
 }
@@ -37,6 +45,7 @@ export default {
 
     <ul v-for="movie in store.movies">
         <li>Titolo: <strong>{{ movie.title }}</strong></li>
+        <li><img :src="getPoster(movie)" alt="Poster" /></li>
         <li>Titolo originale: {{ movie.original_title }}</li>
         <li>Lingua: <country-flag :country='getLanguage(movie)' size='small' /></li>
         <li>Voto: {{ getVote(movie) }}</li>
