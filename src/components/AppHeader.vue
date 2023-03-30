@@ -1,9 +1,14 @@
 
 <script>
+import CountryFlag from 'vue-country-flag-next'
 import { store } from '../store';
 
 export default {
     name: 'Header',
+
+    components: {
+        CountryFlag
+    },
 
     data() {
         return {
@@ -11,7 +16,7 @@ export default {
         }
     },
 
-    eventoEmit: ["searchName"]
+    eventoEmit: ["search-name"]
 }
 </script>
 
@@ -20,7 +25,7 @@ export default {
         <div>
             <h1>BoolFix</h1>
             <!-- input di ricerca -->
-            <form @submit.prevent="$emit('searchName')">
+            <form @submit.prevent="$emit('search-name')">
                 <input type="text" placeholder="Cerca un film" v-model="store.searchText">
                 <button type="submit">Ricerca</button>
             </form>
@@ -32,8 +37,9 @@ export default {
         <ul v-for="movie in store.movies">
             <li><strong>{{ movie.title }}</strong></li>
             <li>{{ movie.original_title }}</li>
-            <li>{{ movie.original_language }}</li>
+            <li><country-flag :country= 'movie.original_language' size='small'/></li>
             <li>{{ movie.vote_average }}</li>
+            
         </ul>
 
         <!-- /lista characters movies -->
@@ -55,7 +61,5 @@ export default {
     ul{
         padding: 15px 0;
     }
-
-
 }
 </style>
