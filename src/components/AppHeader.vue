@@ -16,7 +16,17 @@ export default {
         }
     },
 
-    eventoEmit: ["search-name"]
+    eventoEmit: ["search-name"],
+
+    methods: {
+    getLanguage(movie) {
+        if (movie.original_language === 'en') {
+            return 'gb';
+        } else {
+            return movie.original_language;
+        }
+    }
+}
 }
 </script>
 
@@ -37,7 +47,7 @@ export default {
         <ul v-for="movie in store.movies">
             <li><strong>{{ movie.title }}</strong></li>
             <li>{{ movie.original_title }}</li>
-            <li><country-flag :country= 'movie.original_language' size='small'/></li>
+            <li><country-flag :country= 'getLanguage(movie)' size='small'/></li>
             <li>{{ movie.vote_average }}</li>
             
         </ul>
