@@ -29,9 +29,22 @@ export default {
         .then((response) => {
           this.store.movies = response.data.results;
           console.log(this.store.movies);
+        }),
+
+        axios.get(store.parameters.url_series, {
+        params: {
+          api_key: store.parameters.apiKey,
+          query: store.searchText
+        }
+      })
+        .then((response) => {
+          this.store.series = response.data.results;
+          console.log(this.store.series);
         })
     }
   }
+
+  
 }
 </script>
 

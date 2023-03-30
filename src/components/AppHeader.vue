@@ -4,7 +4,7 @@ import { store } from '../store';
 export default {
     name: 'Header',
 
-   
+
     data() {
         return {
             store,

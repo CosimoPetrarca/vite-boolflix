@@ -1,15 +1,17 @@
 <script>
-import AppCardVue from './AppCard.vue';
+import FilmsCard from './FilmsCard.vue';
+import SeriesCard from './SeriesCard.vue';
 export default {
     name: 'Main',
     components: {
-        AppCardVue
+        FilmsCard,
+        SeriesCard
     }
-   
 }
 </script>
 
 
 <template>
-    <AppCardVue />
+    <FilmsCard />
+    <SeriesCard />
 </template>
