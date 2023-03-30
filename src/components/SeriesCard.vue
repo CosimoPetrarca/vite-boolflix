@@ -22,6 +22,9 @@ export default {
             } else {
                 return serie.original_language;
             }
+        },
+        getVote(serie) {
+            return serie.vote_average / 2;
         }
     }
 }
@@ -31,12 +34,12 @@ export default {
 <template>
     <!-- lista characters movies -->
     <h2>Series</h2>
-    
+
     <ul v-for="serie in store.series">
-        <li><strong>{{ serie.name }}</strong></li>
-        <li>{{ serie.original_name }}</li>
-        <li><country-flag :country='getLanguage(serie)' size='small' /></li>
-        <li>{{ serie.vote_average }}</li>
+        <li>Titolo: <strong>{{ serie.name }}</strong></li>
+        <li>Titolo originale: {{ serie.original_name }}</li>
+        <li>Lingua: <country-flag :country='getLanguage(serie)' size='small' /></li>
+        <li>Voto: {{ getVote(serie) }}</li>
     </ul>
 
     <!-- /lista characters movies -->
@@ -45,5 +48,6 @@ export default {
 <style lang="scss" scoped>
 ul{
     background-color: cadetblue;
+    padding: 20px 0;
 }
 </style>

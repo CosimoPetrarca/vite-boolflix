@@ -22,6 +22,9 @@ export default {
             } else {
                 return movie.original_language;
             }
+        },
+        getVote(movie) {
+            return movie.vote_average / 2;
         }
     }
 }
@@ -33,17 +36,18 @@ export default {
     <h2>Films</h2>
 
     <ul v-for="movie in store.movies">
-        <li><strong>{{ movie.title }}</strong></li>
-        <li>{{ movie.original_title }}</li>
-        <li><country-flag :country='getLanguage(movie)' size='small' /></li>
-        <li>{{ movie.vote_average }}</li>
+        <li>Titolo: <strong>{{ movie.title }}</strong></li>
+        <li>Titolo originale: {{ movie.original_title }}</li>
+        <li>Lingua: <country-flag :country='getLanguage(movie)' size='small' /></li>
+        <li>Voto: {{ getVote(movie) }}</li>
     </ul>
 
     <!-- /lista characters movies -->
 </template>
 
 <style lang="scss" scoped>
-ul{
+ul {
     background-color: lightcoral;
+    padding: 20px 0;
 }
 </style>
