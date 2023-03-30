@@ -30,7 +30,8 @@ export default {
 
 <template>
     <!-- lista characters movies -->
-
+    <h2>Series</h2>
+    
     <ul v-for="serie in store.series">
         <li><strong>{{ serie.name }}</strong></li>
         <li>{{ serie.original_name }}</li>
@@ -40,3 +41,9 @@ export default {
 
     <!-- /lista characters movies -->
 </template>
+
+<style lang="scss" scoped>
+ul{
+    background-color: cadetblue;
+}
+</style>
