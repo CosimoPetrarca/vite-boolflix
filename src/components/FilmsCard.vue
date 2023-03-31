@@ -24,7 +24,7 @@ export default {
             }
         },
         getVote(movie) {
-            return movie.vote_average / 2;
+            return Math.floor(movie.vote_average / 2);
         },
 
         getPoster(movie) {

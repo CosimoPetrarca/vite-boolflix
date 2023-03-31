@@ -24,7 +24,7 @@ export default {
             }
         },
         getVote(serie) {
-            return serie.vote_average / 2;
+            return Math.floor(serie.vote_average / 2);
         },
 
         getPoster(serie) {
