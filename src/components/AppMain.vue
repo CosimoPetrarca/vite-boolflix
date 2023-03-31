@@ -12,6 +12,12 @@ export default {
 
 
 <template>
-    <FilmsCard />
-    <SeriesCard />
+    <div>
+        <FilmsCard />
+        <SeriesCard />
+    </div>
 </template>
+
+<style lang="scss" scoped>
+
+</style>

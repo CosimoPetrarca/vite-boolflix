@@ -16,6 +16,7 @@ export default {
     eventoEmit: ["search-name"],
 
     methods: {
+        /* cambio lingua da en a gb */
         getLanguage(movie) {
             if (movie.original_language === 'en') {
                 return 'gb';
@@ -23,15 +24,16 @@ export default {
                 return movie.original_language;
             }
         },
+        /* arrotondamento in eccesso */
         getVote(movie) {
             return Math.floor(movie.vote_average / 2);
         },
-
+        /* richiamo locandina */
         getPoster(movie) {
             if (movie.poster_path) {
                 return `${store.parameters.url_img}${movie.poster_path}`;
             } else {
-                return '';
+                return 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
             }
         }
     }
@@ -48,7 +50,9 @@ export default {
         <li><img :src="getPoster(movie)" alt="Poster" /></li>
         <li>Titolo originale: {{ movie.original_title }}</li>
         <li>Lingua: <country-flag :country='getLanguage(movie)' size='small' /></li>
-        <li>Voto: {{ getVote(movie) }}</li>
+        <li>Voto: <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote(movie)" />
+            <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote(movie)" />
+        </li>
     </ul>
 
     <!-- /lista characters movies -->
@@ -57,6 +61,6 @@ export default {
 <style lang="scss" scoped>
 ul {
     background-color: lightcoral;
-    padding: 20px 0;
+    padding: 20px;
 }
 </style>

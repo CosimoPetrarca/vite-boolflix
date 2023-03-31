@@ -19,7 +19,9 @@ export default {
 
   /* richiamo l'api tramite axios */
   methods: {
+    
     search() {
+      /* film */
       axios.get(store.parameters.url_movies, {
         params: {
           api_key: store.parameters.apiKey,
@@ -31,6 +33,7 @@ export default {
           console.log(this.store.movies);
         }),
 
+        /* serie */
         axios.get(store.parameters.url_series, {
         params: {
           api_key: store.parameters.apiKey,
