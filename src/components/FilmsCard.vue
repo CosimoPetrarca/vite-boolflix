@@ -56,6 +56,7 @@ export default {
                 <p><font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote(movie)" />
                     <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote(movie)" />
                 </p>
+
             </div>
         </div>
     </div>
@@ -67,9 +68,8 @@ export default {
 .flip-card {
     background-color: transparent;
     width: 342px;
-    height: 513px;
-    margin-bottom: 50px;
-
+    height: 535px;
+    margin: 10px 20px;
 }
 
 .flip-card-inner {

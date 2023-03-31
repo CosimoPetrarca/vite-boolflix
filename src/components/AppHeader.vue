@@ -31,6 +31,7 @@ export default {
 .container {
     max-width: 1200px;
     margin: auto;
+    padding-bottom: 30px;
 
     form{
         text-align: center;
@@ -41,6 +42,10 @@ export default {
             border-radius: 20px;
             border: none;
             margin-right: 10px;
+        }
+
+        input:focus{
+            outline: 2px solid #D10809;
         }
 
         button{

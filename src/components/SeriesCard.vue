@@ -70,7 +70,7 @@ export default {
     background-color: transparent;
     width: 342px;
     height: 513px;
-    margin-bottom: 50px;
+    margin: 10px 20px;
 
 }
 
