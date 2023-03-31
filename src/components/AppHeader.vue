@@ -16,10 +16,10 @@ export default {
 <template>
     <div class="container">
         <div>
-            <h1>BoolFix</h1>
+            <img src="../../pubblic/logo.png" alt="">
             <!-- input di ricerca -->
             <form @submit.prevent="$emit('search-name')">
-                <input type="text" placeholder="Cerca un film" v-model="store.searchText">
+                <input type="text" placeholder="Cerca un film o una serie tv" v-model="store.searchText">
                 <button type="submit">Ricerca</button>
             </form>
             <!-- /input di ricerca -->
@@ -32,11 +32,30 @@ export default {
     max-width: 1200px;
     margin: auto;
 
-    div {
+    form{
+        text-align: center;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        input{
+            width: 30%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        button{
+            background-color: white;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        button:hover{
+            background-color: #D10809;
+        }
     }
+
+
 }
 </style>
