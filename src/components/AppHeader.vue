@@ -32,6 +32,7 @@ export default {
     max-width: 1200px;
     margin: auto;
     padding-bottom: 30px;
+    text-align: center;
 
     form{
         text-align: center;
