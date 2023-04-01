@@ -50,6 +50,7 @@ export default {
                 <img :src="getPoster(movie)" alt="Poster" />
             </div>
             <div class="flip-card-back">
+                <p>Movie</p>
                 <h1>{{ movie.title }}</h1>
                 <p>{{ movie.original_title }}</p>
                 <p><country-flag :country='getLanguage(movie)' size='normal' /></p>
@@ -105,6 +106,7 @@ export default {
     border: 1px solid #D10809;
     color: white;
     transform: rotateY(180deg);
+    overflow-y: auto;
 }
 
 .fa-star{

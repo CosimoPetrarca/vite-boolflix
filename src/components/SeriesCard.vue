@@ -51,6 +51,7 @@ export default {
                 <img :src="getPoster(serie)" alt="Poster" />
             </div>
             <div class="flip-card-back">
+                <p>Series</p>
                 <h1>{{ serie.name }}</h1>
                 <p>{{ serie.original_name }}</p>
                 <p><country-flag :country='getLanguage(serie)' size='normal' /></p>
@@ -72,7 +73,6 @@ export default {
     width: 342px;
     height: 513px;
     margin: 10px 20px;
-
 }
 
 .flip-card-inner {
@@ -107,6 +107,7 @@ export default {
     border: 1px solid #D10809;
     color: white;
     transform: rotateY(180deg);
+    overflow-y: auto;
 }
 
 .fa-star{
