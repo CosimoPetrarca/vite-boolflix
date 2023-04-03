@@ -32,7 +32,7 @@ export default {
         /* richiamo locandina */
         getPoster(serie) {
             if (serie.poster_path) {
-                return `${store.parameters.url_img}${serie.poster_path}`;
+                return `${store.parameters.url_img}${serie.poster_path}`; /* concatenato eventi */
             } else {
                 return 'src/assets/scss/img/noimage.jpg';
             }
@@ -67,6 +67,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/_partial/variables' as *;
 
 .flip-card {
     background-color: transparent;
@@ -98,20 +99,20 @@ export default {
 }
 
 .flip-card-front {
-    background-color: #2F2E2E;
+    background-color: $primary;
     color: black;
 }
 
 .flip-card-back {
-    background-color: #2F2E2E;
-    border: 1px solid #D10809;
+    background-color: $primary;
+    border: 1px solid $secondary;
     color: white;
     transform: rotateY(180deg);
     overflow-y: auto;
 }
 
 .fa-star{
-    color: #ffd700;
+    color: $stars;
 }
 
 h3{

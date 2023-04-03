@@ -28,6 +28,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/_partial/variables' as *;
 .container {
     max-width: 1200px;
     margin: auto;
@@ -46,7 +47,7 @@ export default {
         }
 
         input:focus{
-            outline: 2px solid #D10809;
+            outline: 2px solid $secondary;
         }
 
         button{
@@ -58,7 +59,7 @@ export default {
         }
 
         button:hover{
-            background-color: #D10809;
+            background-color: $secondary;
         }
     }
 

@@ -19,12 +19,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/_partial/variables' as *;
+
 div {
     display: flex;
     flex-wrap: wrap;
     max-width: 1600px;
     margin: auto;
-    background-color: #2F2E2E;
+    background-color: $primary;
     border-radius: 5px;
     padding: 20px;
 }
